@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 70" width="280" height="70">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="100%" stop-color="#003B99"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2FF"/>
+      <stop offset="100%" stop-color="#0066FF"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#FFA500"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0066FF" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Bank Emblem / Shield Icon -->
+  <g transform="translate(6, 6)" filter="url(#glow)">
+    <!-- Hexagon Shield Background -->
+    <path d="M 28 2 L 52 14 L 52 42 L 28 54 L 4 42 L 4 14 Z" fill="url(#logoGrad)"/>
+    <!-- Inner Accent Rim -->
+    <path d="M 28 6 L 48 16 L 48 40 L 28 50 L 8 40 L 8 16 Z" fill="none" stroke="url(#accentGrad)" stroke-width="2" opacity="0.8"/>
+    <!-- Bank Pillars & Roof Icon inside Shield -->
+    <path d="M 18 20 L 28 13 L 38 20 Z" fill="#FFFFFF"/>
+    <rect x="20" y="22" width="3.5" height="15" rx="1.5" fill="#FFFFFF"/>
+    <rect x="26.25" y="22" width="3.5" height="15" rx="1.5" fill="#FFFFFF"/>
+    <rect x="32.5" y="22" width="3.5" height="15" rx="1.5" fill="#FFFFFF"/>
+    <rect x="17" y="38" width="22" height="3" rx="1.5" fill="#FFFFFF"/>
+    <!-- Gold Star of Excellence -->
+    <circle cx="28" cy="18" r="2" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- Typography: XYZ BANK -->
+  <text x="74" y="36" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="25" font-weight="800" fill="#0A2540" letter-spacing="-0.5">
+    XYZ<tspan fill="#0066FF">BANK</tspan>
+  </text>
+  <text x="75" y="52" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600" fill="#6B7C93" letter-spacing="2.2">
+    PREMIER FINANCIAL
+  </text>
+</svg>

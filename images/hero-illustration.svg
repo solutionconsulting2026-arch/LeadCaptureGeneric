@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00D2FF" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A2540"/>
+      <stop offset="100%" stop-color="#1A365D"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB703"/>
+      <stop offset="100%" stop-color="#FB8500"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C48C"/>
+      <stop offset="100%" stop-color="#00966D"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="100%" stop-color="#0047BA"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#0A2540" flood-opacity="0.16"/>
+    </filter>
+    <filter id="floatShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0066FF" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Background decorative curves & dots -->
+  <circle cx="270" cy="190" r="160" fill="url(#bgGrad)"/>
+  <circle cx="430" cy="70" r="6" fill="#0066FF" opacity="0.3"/>
+  <circle cx="90" cy="290" r="8" fill="#FFB703" opacity="0.4"/>
+  <circle cx="480" cy="270" r="5" fill="#00C48C" opacity="0.4"/>
+  
+  <!-- Grid lines -->
+  <path d="M 60 190 Q 270 120 480 190" stroke="#0066FF" stroke-width="1.5" stroke-dasharray="6,6" fill="none" opacity="0.2"/>
+  <path d="M 90 230 Q 270 160 450 230" stroke="#00C48C" stroke-width="1.5" stroke-dasharray="4,4" fill="none" opacity="0.2"/>
+
+  <!-- Main Credit / Smart Banking Card (Angled & Floating) -->
+  <g transform="translate(140, 75) rotate(-6)" filter="url(#cardShadow)">
+    <rect width="250" height="155" rx="16" fill="url(#cardGrad1)"/>
+    <!-- Card Chip -->
+    <rect x="24" y="24" width="34" height="26" rx="5" fill="#FFD700" opacity="0.9"/>
+    <line x1="24" y1="37" x2="58" y2="37" stroke="#B8860B" stroke-width="1"/>
+    <line x1="41" y1="24" x2="41" y2="50" stroke="#B8860B" stroke-width="1"/>
+    <!-- Contactless wave -->
+    <path d="M 72 32 A 8 8 0 0 1 72 42" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M 77 28 A 14 14 0 0 1 77 46" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.4"/>
+    <!-- Bank Name -->
+    <text x="180" y="38" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" opacity="0.9">XYZ BANK</text>
+    <!-- Card number preview -->
+    <text x="24" y="95" font-family="monospace" font-size="15" font-weight="600" fill="#FFFFFF" letter-spacing="3" opacity="0.95">•••• •••• •••• 8842</text>
+    <!-- Cardholder & Tier -->
+    <text x="24" y="125" font-family="'Inter', sans-serif" font-size="8.5" font-weight="500" fill="#94A3B8" letter-spacing="1">PREMIUM CLIENT</text>
+    <text x="24" y="137" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">ALEXANDER MORGAN</text>
+    <!-- Gold / Platinum badge circles -->
+    <circle cx="210" cy="125" r="14" fill="#FF5E00" opacity="0.8"/>
+    <circle cx="196" cy="125" r="14" fill="#FFAA00" opacity="0.8"/>
+  </g>
+
+  <!-- Floating Approved Pill Badge -->
+  <g transform="translate(60, 150)" filter="url(#floatShadow)">
+    <rect width="160" height="60" rx="14" fill="#FFFFFF"/>
+    <circle cx="34" cy="30" r="16" fill="url(#greenGrad)"/>
+    <path d="M 27 30 L 32 35 L 41 25" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="58" y="27" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#0A2540">Instant Approval</text>
+    <text x="58" y="44" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#00C48C">In 3 Minutes ⚡</text>
+  </g>
+
+  <!-- Floating Interest Rate / Growth Badge -->
+  <g transform="translate(320, 215)" filter="url(#floatShadow)">
+    <rect width="180" height="68" rx="14" fill="#FFFFFF"/>
+    <circle cx="36" cy="34" r="18" fill="url(#cardGrad2)"/>
+    <!-- Percent / Star Icon -->
+    <text x="28" y="41" font-family="'Inter', sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">%</text>
+    <text x="64" y="29" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#64748B">Lowest Interest</text>
+    <text x="64" y="48" font-family="'Inter', sans-serif" font-size="15" font-weight="800" fill="#0A2540">From 7.9% <tspan font-size="10" font-weight="500" fill="#64748B">p.a.</tspan></text>
+  </g>
+
+  <!-- Floating Security Lock Pill -->
+  <g transform="translate(200, 275)" filter="url(#floatShadow)">
+    <rect width="150" height="46" rx="23" fill="url(#blueGrad)"/>
+    <!-- Lock Icon -->
+    <rect x="22" y="23" width="14" height="11" rx="2" fill="#FFFFFF"/>
+    <path d="M 25 23 L 25 18 A 4 4 0 0 1 33 18 L 33 23" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+    <text x="44" y="28" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">256-Bit SSL</text>
+    <text x="44" y="38" font-family="'Inter', sans-serif" font-size="8.5" font-weight="500" fill="#E0F2FE">Bank-Grade Privacy</text>
+  </g>
+</svg>

@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Lead Capture & Loan Application - XYZ Bank</title>
+    <link rel="icon" href="images/bank-logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066FF;
+            --primary-dark: #0047BA;
+            --primary-light: #EBF4FF;
+            --navy-dark: #0A2540;
+            --navy-deep: #071727;
+            --gold: #F59E0B;
+            --gold-light: #FFFBEB;
+            --gold-dark: #B45309;
+            --green: #10B981;
+            --green-dark: #059669;
+            --green-light: #ECFDF5;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-400: #94A3B8;
+            --gray-600: #64748B;
+            --gray-700: #475569;
+            --gray-900: #0F172A;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(10, 37, 64, 0.08), 0 4px 6px -4px rgba(10, 37, 64, 0.04);
+            --shadow-xl: 0 20px 25px -5px rgba(10, 37, 64, 0.08), 0 8px 10px -6px rgba(10, 37, 64, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(10, 37, 64, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--gray-50);
+            color: var(--gray-900);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #ffffff;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+        }
+        
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 54px;
+            display: block;
+        }
+        
+        .header-badges {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .demo-tag {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-300);
+            color: var(--gray-700);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .demo-tag span.dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--green);
+            display: inline-block;
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--green-light);
+            border: 1px solid #A7F3D0;
+            color: var(--green-dark);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .security-badge svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        .hotline-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--navy-dark);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .hotline-link:hover {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #071727 0%, #0A2540 50%, #0D3B66 100%);
+            color: white;
+            padding: 70px 0 110px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #93C5FD;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            color: #ffffff;
+        }
+
+        .hero h1 span.gradient-text {
+            background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 50%, #FBBF24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: #CBD5E1;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 580px;
+        }
+
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+        }
+
+        .stat-number span.stat-accent {
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 12.5px;
+            font-weight: 500;
+            color: #94A3B8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
+            animation: floatHero 6s ease-in-out infinite;
+        }
+
+        @keyframes floatHero {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Form Section & Two-Column Layout */
+        .form-section-wrapper {
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            margin-bottom: 80px;
+        }
+
+        .application-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.35fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        /* Left Side Feature Showcase Column */
+        .side-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .product-preview-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: var(--shadow-lg);
+            border: 1.5px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .product-preview-card:hover {
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .preview-tag {
+            background: var(--gold-light);
+            color: var(--gold-dark);
+            border: 1px solid #FDE68A;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-interactive-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .product-card-btn {
+            background: var(--gray-50);
+            border: 2px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-card-btn.active {
+            background: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 14px rgba(0, 102, 255, 0.15);
+        }
+
+        .product-card-btn img {
+            width: 70px;
+            height: 56px;
+            object-fit: contain;
+        }
+
+        .product-card-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy-dark);
+        }
+
+        .product-card-rate {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--green-dark);
+            background: var(--green-light);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .product-perks {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .product-perks li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13.5px;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        .product-perks li svg {
+            color: var(--green);
+            flex-shrink: 0;
+        }
+
+        /* Trust & Review Box */
+        .trust-testimonial-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+        }
+
+        .trust-score-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        .stars {
+            color: #F59E0B;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .trust-rating-text {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy-dark);
+        }
+
+        .customer-quote {
+            font-size: 13.5px;
+            color: var(--gray-600);
+            font-style: italic;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .customer-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0066FF, #00D2FF);
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .author-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--navy-dark);
+        }
+
+        .author-desc {
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+
+        /* Security Assurance Box */
+        .security-promise-card {
+            background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F6 100%);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid var(--gray-300);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .security-promise-card img {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .security-promise-text h4 {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 4px;
+        }
+
+        .security-promise-text p {
+            font-size: 12px;
+            color: var(--gray-600);
+            line-height: 1.4;
+        }
+
+        /* Right Form Card */
+        .form-section {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 44px 44px;
+            box-shadow: var(--shadow-2xl);
+            border: 1px solid var(--gray-200);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .form-header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 6px;
+            letter-spacing: -0.02em;
+        }
+        
+        .form-section .subtitle {
+            color: var(--gray-600);
+            font-size: 14.5px;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+        
+        .card-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 24px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--navy-dark);
+            font-size: 13.5px;
+            letter-spacing: 0.01em;
+        }
+
+        .form-group label span.req {
+            color: #EF4444;
+            margin-left: 3px;
+        }
+
+        .form-group label span.opt {
+            color: var(--gray-400);
+            font-weight: 400;
+            font-size: 12px;
+        }
+
+        .input-with-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 14px;
+            color: var(--gray-400);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease;
+        }
+
+        .input-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group select {
+            width: 100%;
+            padding: 13px 16px 13px 44px;
+            border: 1.5px solid var(--gray-300);
+            border-radius: 10px;
+            font-size: 14.5px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s ease;
+            background-color: #ffffff;
+            color: var(--gray-900);
+            font-weight: 500;
+        }
+        
+        .form-group input[type="text"]:hover,
+        .form-group input[type="email"]:hover,
+        .form-group select:hover {
+            border-color: var(--gray-400);
+        }
+        
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.12);
+            background-color: #ffffff;
+        }
+
+        .form-group input:focus + .input-icon,
+        .input-with-icon:focus-within .input-icon {
+            color: var(--primary);
+        }
+        
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 42px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        /* Terms & Privacy Checkbox */
+        .checkbox-row {
+            grid-column: span 2;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .checkbox-row input[type="checkbox"] {
+            margin-top: 3px;
+            accent-color: var(--primary);
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+        }
+
+        .checkbox-row label {
+            font-size: 12.5px;
+            color: var(--gray-600);
+            line-height: 1.5;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checkbox-row label a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        .form-submit {
+            grid-column: span 2;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .btn-primary {
+            width: 100%;
+            background: linear-gradient(135deg, #0066FF 0%, #0047BA 100%);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
+            letter-spacing: 0.01em;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.45);
+            background: linear-gradient(135deg, #005CE6 0%, #003B99 100%);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.2s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(3px);
+        }
+
+        .submit-guarantee {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--gray-600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* ---------------------------------------------------- */
+        /* THANK YOU PAGE VIEW (Displayed On Submit)           */
+        /* ---------------------------------------------------- */
+        #thank-you-container {
+            display: none;
+            animation: fadeInThankYou 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeInThankYou {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .thank-you-view {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 50px 48px;
+            box-shadow: var(--shadow-2xl);
+            border: 1px solid var(--gray-200);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thank-you-view::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0066FF, #00D2FF, #10B981, #FFB703);
+        }
+
+        .ty-icon-box {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+        }
+
+        .ty-icon-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            animation: popCheck 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes popCheck {
+            0% { transform: scale(0); }
+            70% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        .ty-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--green-light);
+            color: var(--green-dark);
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            border: 1px solid #A7F3D0;
+        }
+
+        .thank-you-view h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .thank-you-view p.ty-subtitle {
+            font-size: 1.05rem;
+            color: var(--gray-600);
+            max-width: 580px;
+            margin: 0 auto 28px;
+            line-height: 1.5;
+        }
+
+        .ty-ref-banner {
+            background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F6 100%);
+            border: 1.5px dashed var(--gray-300);
+            border-radius: 14px;
+            padding: 16px 24px;
+            max-width: 520px;
+            margin: 0 auto 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        .ty-ref-banner .ref-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+
+        .ty-ref-banner .ref-value {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        .ty-ref-banner .ref-status {
+            background: var(--green);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 10px;
+        }
+
+        .ty-summary-card {
+            background: #ffffff;
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 20px 24px;
+            max-width: 680px;
+            margin: 0 auto 30px;
+            text-align: left;
+        }
+
+        .ty-summary-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--gray-100);
+            padding-bottom: 10px;
+        }
+
+        .ty-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px 20px;
+        }
+
+        .ty-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ty-field .f-label {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .ty-field .f-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        /* Timeline steps */
+        .ty-timeline-box {
+            max-width: 680px;
+            margin: 0 auto 30px;
+            text-align: left;
+        }
+
+        .ty-timeline-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .ty-steps-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .ty-step {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 14px 10px;
+            text-align: center;
+        }
+
+        .ty-step.done {
+            border-color: var(--green);
+            background: var(--green-light);
+        }
+
+        .ty-step.current {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .ty-step-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .ty-step.done .ty-step-icon {
+            background: var(--green);
+            color: white;
+        }
+
+        .ty-step.current .ty-step-icon {
+            background: var(--primary);
+            color: white;
+        }
+
+        .ty-step:not(.done):not(.current) .ty-step-icon {
+            background: var(--gray-300);
+            color: white;
+        }
+
+        .ty-step-name {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 3px;
+        }
+
+        .ty-step-sub {
+            font-size: 11px;
+            color: var(--gray-600);
+            line-height: 1.3;
+        }
+
+        .ty-actions-row {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: #ffffff;
+            color: var(--gray-700);
+            border: 1.5px solid var(--gray-300);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gray-400);
+            background: var(--gray-50);
+            color: var(--navy-dark);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 40px 0 80px;
+        }
+
+        .benefits-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 48px;
+        }
+
+        .benefits-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .benefits-header p {
+            color: var(--gray-600);
+            font-size: 15px;
+        }
+
+        .card-benefits {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 18px;
+            padding: 32px 24px;
+            box-shadow: var(--shadow-md);
+            text-align: left;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+            position: relative;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+        
+        .benefit-icon-box {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .benefit-icon-box.blue {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .benefit-icon-box.gold {
+            background: var(--gold-light);
+            color: var(--gold-dark);
+        }
+
+        .benefit-icon-box.green {
+            background: var(--green-light);
+            color: var(--green-dark);
+        }
+
+        .benefit-icon-box.navy {
+            background: #EEF2F6;
+            color: var(--navy-dark);
+        }
+
+        .benefit-icon-box svg {
+            width: 26px;
+            height: 26px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--navy-dark);
+            letter-spacing: -0.01em;
+        }
+        
+        .benefit-card p {
+            color: var(--gray-600);
+            font-size: 13.5px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #071727 0%, #0A2540 100%);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.05rem;
+            font-weight: 700; 
+            margin-bottom: 18px;
+            color: #ffffff;
+            letter-spacing: 0.01em;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 13.5px;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #ffffff;
+        }
+
+        .footer-desc {
+            color: #94A3B8;
+            font-size: 13.5px;
+            line-height: 1.6;
+            margin-top: 14px;
+            max-width: 320px;
+        }
+        
+        .footer-bottom {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            font-size: 13px;
+            color: #94A3B8;
+            margin-bottom: 6px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .application-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin: 0 auto 30px;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .card-benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.15rem;
+            }
+
+            .hero {
+                padding: 50px 0 90px;
+            }
+            
+            .form-section {
+                padding: 32px 20px;
+            }
+            
+            .card-form {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .form-group.full-width,
+            .form-submit,
+            .checkbox-row {
+                grid-column: span 1;
+            }
+            
+            .card-benefits {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .ty-steps-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .ty-summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ty-ref-banner {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .header-badges .hotline-link {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hidden iframe to submit the form in background without error redirect -->
+    <iframe name="hidden_olc_iframe" id="hidden_olc_iframe" style="display:none;" tabindex="-1"></iframe>
+
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="index (8).html">
+                        <img src="images/bank-logo.svg" alt="BANK XYZ Logo">
+                    </a>
+                </div>
+                <div class="header-badges">
+                    <div class="demo-tag">
+                        <span class="dot"></span>
+                        <span>Lead Capture Demo - OLC</span>
+                    </div>
+                    <div class="security-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <span>256-Bit SSL</span>
+                    </div>
+                    <a href="tel:19009247" class="hotline-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>1900 9247</span>
+                    </a>
+                </div> 
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Banner with Illustration & Badges -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-pill">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <span>Premier Digital Banking Solutions</span>
+                    </div>
+                    <h1 class="lang-en">Welcome to <span class="gradient-text">XYZ Bank</span></h1>
+                    <p class="lang-en">Experience lightning-fast digital loan approvals with market-leading interest rates starting at 7.9% p.a. Minimal documentation, 100% paperless processing, and instant disbursal.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3<span class="stat-accent">Min</span></div>
+                            <div class="stat-label">Online Pre-Approval</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">7.9<span class="stat-accent">%</span></div>
+                            <div class="stat-label">Starting Interest p.a.</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100<span class="stat-accent">%</span></div>
+                            <div class="stat-label">Digital & Paperless</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="images/hero-illustration.svg" alt="Digital Banking Experience">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Form Section -->
+    <section class="container form-section-wrapper">
+        <!-- 1. Active Lead Capture Form Container -->
+        <div id="form-container" class="application-layout">
+            
+            <!-- Left Side: Visual Product Selector & Trust Card -->
+            <div class="side-showcase">
+                <div class="product-preview-card">
+                    <div class="preview-header">
+                        <span class="preview-tag">Select Your Solution</span>
+                        <span style="font-size: 12px; color: var(--gray-600); font-weight: 500;">Quick Selection</span>
+                    </div>
+
+                    <!-- Visual Product Toggle Cards -->
+                    <div class="product-interactive-selector">
+                        <div class="product-card-btn active" id="btn-prod-gold" onclick="selectLoanProduct('1000056', 'Gold Loan', this)">
+                            <img src="images/gold-loan.svg" alt="Gold Loan">
+                            <div class="product-card-title">Gold Loan</div>
+                            <div class="product-card-rate">From 7.9% p.a.</div>
+                        </div>
+                        <div class="product-card-btn" id="btn-prod-home" onclick="selectLoanProduct('1000472', 'Home Loan', this)">
+                            <img src="images/home-loan.svg" alt="Home Loan">
+                            <div class="product-card-title">Home Loan</div>
+                            <div class="product-card-rate">From 8.35% p.a.</div>
+                        </div>
+                    </div>
+
+                    <ul class="product-perks" id="product-perks-list">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Instant cash against physical gold assets</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Up to 75% of current market bullion value</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Zero hidden charges & flexible tenure</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Customer Trust Card -->
+                <div class="trust-testimonial-card">
+                    <div class="trust-score-row">
+                        <div class="stars">★★★★★</div>
+                        <div class="trust-rating-text">4.9/5 Trust Rating</div>
+                    </div>
+                    <div class="customer-quote">
+                        "Applied in the morning and my Gold Loan got sanctioned within 3 hours. Transparent rates and exceptional service!"
+                    </div>
+                    <div class="customer-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-details">
+                            <span class="author-name">Michael Reynolds</span>
+                            <span class="author-desc">Verified Borrower • Approved ₹25,00,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Assurance -->
+                <div class="security-promise-card">
+                    <img src="images/security-badge.svg" alt="Security Shield">
+                    <div class="security-promise-text">
+                        <h4>Bank-Grade Data Privacy</h4>
+                        <p>All submitted details are encrypted with 256-bit AES protection and routed directly to our secure loan underwriting vault.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: The Form -->
+            <div class="form-section">
+                <div class="form-header-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <span>Instant Digital Application</span>
+                </div>
+                <h2 class="lang-en">Apply Today!</h2>
+                <p class="subtitle">Fill out the quick form below to get an instant loan pre-approval decision within minutes.</p>
+                
+                <form class="card-form" id="OnLineLeadForm" method="post" target="hidden_olc_iframe" action="https://presales1.businessbywire.com/appgold8demo/ProcessAnonymous/OnlineLeadCapture?x=25xgkuqlsapsn67x4pygd2jkrk6m72jvlen6vdzn7tjjah84auerhkhnhralk3brshfc96w9zw737456f3x9un7jmz66gzz2hj2asrx7zjtan8tgg8dq" onsubmit="return handleFormSubmit(event);">
+                    <!-- Original Hidden Backend Fields (Preserved 100%) -->
+                    <input type="hidden" name="debug" value="1"> 
+                    <input type="hidden" name="debugEmail" value="james@crmnext.com"> 
+                    <input type="hidden" id="SuccessReturnURL" name="SuccessReturnURL" value="thankyou.html">
+                    <input type="hidden" name="FailureReturnURL" value="https://sample-demo-page.github.io/crm-olc-dedupe-demo/">
+                    <input id="ProductName" name="ProductName" type="hidden" class="field" value="Gold Loan">
+                    <select id="Layout" name="Layout" style="display: none;">
+                         <option value="102994">CC Process VN</option>
+                    </select>
+                    <select id="StatusCode" name="StatusCode" style="display: none;">
+                            <option value="100003">New</option>
+                    </select>
+                    <input type="hidden" id="cust_8239" name="cust_8239" value="Credit Card Campaign for Masses">
+                    <input type="hidden" id="cust_8240" name="cust_8240" value="Campaign">
+
+                    <!-- First Name -->
+                    <div class="form-group">
+                        <label for="FName" class="lang-en">First Name <span class="req">*</span></label>
+                        <div class="input-with-icon">
+                            <input type="text" id="FName" name="FName" placeholder="e.g. John" required>
+                            <div class="input-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="form-group">
+                        <label for="LName" class="lang-en">Last Name <span class="req">*</span></label>
+                        <div class="input-with-icon">
+                            <input type="text" id="LName" name="LName" placeholder="e.g. Doe" required>
+                            <div class="input-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Name -->
+                    <div class="form-group">
+                        <label for="Company" class="lang-en">Company Name <span class="req">*</span></label>
+                        <div class="input-with-icon">
+                            <input type="text" id="Company" name="Company" placeholder="e.g. Acme Corp / Self-Employed" required>
+                            <div class="input-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- National ID Number -->
+                    <div class="form-group">
+                        <label class="lang-en">National ID Number <span class="opt">(Optional)</span></label>
+                        <div class="input-with-icon">
+                            <input type="text" id="cust_2143" name="cust_2143" placeholder="e.g. 123456789" value="">
+                            <div class="input-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                                    <line x1="7" y1="8" x2="17" y2="8"></line>
+                                    <line x1="7" y1="12" x2="11" y2="12"></line>
+                                    <line x1="7" y1="16" x2="15" y2="16"></line>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                                
+                    <!-- Email Address -->
+                    <div class="form-group">
+                        <label for="Email" class="lang-en">Email Address <span class="req">*</span></label>
+                        <div class="input-with-icon">
+                            <input type="email" id="Email" name="Email" placeholder="yourname@example.com" required>
+                            <div class="input-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Number -->
+                    <div class="form-group">
+                        <label for="MobPhone" class="lang-en">Mobile Number <span class="req">*</span></label>
+                        <div class="input-with-icon">
+                            <input type="text" id="MobPhone" name="MobPhone" placeholder="e.g. +91 98765 43210" required>
+                            <div class="input-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Address -->
+                    <div class="form-group">
+                        <label class="lang-en">Residential Address <span class="opt">(Optional)</span></label>
+                        <label class="lang-vi" style="display: none;">Địa Chỉ</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="Address" name="Address" placeholder="Street, City, State">
+                            <div class="input-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Annual Income -->
+                    <div class="form-group">
+                        <label class="lang-en">Annual Income (₹) <span class="opt">(Optional)</span></label>
+                        <label class="lang-vi" style="display: none;">Thu Nhập Hàng Năm (VND)</label>
+                        <div class="input-with-icon">
+                            <input type="text" name="cust_5773" id="cust_5773" placeholder="e.g. ₹6,00,000" value="">
+                            <div class="input-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 5H7h3a4 4 0 0 1 0 8H7l6 6"></path>
+                                    <line x1="7" y1="9" x2="18" y2="9"></line>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Selection Dropdown -->
+                    <div class="form-group full-width">
+                        <label for="Product" class="lang-en">Desired Financial Product <span class="req">*</span></label>
+                        <label for="Product" class="lang-vi" style="display: none;">Loại Thẻ Tín Dụng Ưa Thích</label>
+                        <div class="input-with-icon">
+                            <select name="Product" id="Product" onchange="UpdateProductName(); syncProductCard();" required>
+                                <option value="1000056" class="lang-en" selected>Gold Loan</option>
+                                <option value="1000472" id="Visa" class="lang-en">Home Loan</option>
+                                <option value="1000408" class="lang-vi" style="display: none;">Visa Hoàn Tiền 360</option>
+                                <option value="1000406" class="lang-vi" style="display: none;">Hoàn Tiền Online</option>
+                                <option value="1000407" class="lang-vi" style="display: none;">Visa Vô Hạn</option>
+                            </select>
+                            <div class="input-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 2l10 8H2l10-8z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consent check -->
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="consent" checked required>
+                        <label for="consent">
+                            I authorize XYZ Bank and its representatives to contact me via Call, SMS, or WhatsApp regarding this loan application.
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-submit">
+                        <button class="btn-primary lang-en" id="submitBtn" name="submit" type="submit" onclick="return IsValidForm();">
+                            <span>Submit Application</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                        <div class="submit-guarantee">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <span>No application fees • Instant credit evaluation • Safe & confidential</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 2. On Submit Thank You Page Container (Revealed on submit) -->
+        <div id="thank-you-container">
+            <div class="thank-you-view">
+                <div class="ty-icon-box">
+                    <img src="images/thank-you-success.svg" alt="Application Submitted">
+                </div>
+                
+                <div class="ty-badge">✓ Application Received</div>
+                
+                <h2>Thank You, <span id="ty-applicant-name">Valued Customer</span>!</h2>
+                <p class="ty-subtitle">Your loan application has been received successfully. Our underwriting team has initiated the verification process.</p>
+
+                <!-- Reference Banner -->
+                <div class="ty-ref-banner">
+                    <div>
+                        <div class="ref-title">Application Reference Number</div>
+                        <div class="ref-value" id="ty-ref-code">XYZ-2026-739281</div>
+                    </div>
+                    <div class="ref-status">● Status: In Review</div>
+                </div>
+
+                <!-- Submission Summary Card -->
+                <div class="ty-summary-card">
+                    <h4>
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                        Submitted Application Details
+                    </h4>
+                    <div class="ty-summary-grid">
+                        <div class="ty-field">
+                            <span class="f-label">Loan Product</span>
+                            <span class="f-value" id="ty-product">Gold Loan</span>
+                        </div>
+                        <div class="ty-field">
+                            <span class="f-label">Full Name</span>
+                            <span class="f-value" id="ty-fullname">John Doe</span>
+                        </div>
+                        <div class="ty-field">
+                            <span class="f-label">Email Address</span>
+                            <span class="f-value" id="ty-email">john@example.com</span>
+                        </div>
+                        <div class="ty-field">
+                            <span class="f-label">Mobile Number</span>
+                            <span class="f-value" id="ty-phone">+91 98765 43210</span>
+                        </div>
+                        <div class="ty-field">
+                            <span class="f-label">Company</span>
+                            <span class="f-value" id="ty-company">Acme Corp</span>
+                        </div>
+                        <div class="ty-field">
+                            <span class="f-label">Submitted On</span>
+                            <span class="f-value" id="ty-timestamp">Just now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Steps Progress -->
+                <div class="ty-timeline-box">
+                    <div class="ty-timeline-title">What to Expect Next</div>
+                    <div class="ty-steps-row">
+                        <div class="ty-step done">
+                            <div class="ty-step-icon">✓</div>
+                            <div class="ty-step-name">Submitted</div>
+                            <div class="ty-step-sub">Lead logged in CRM</div>
+                        </div>
+                        <div class="ty-step current">
+                            <div class="ty-step-icon">2</div>
+                            <div class="ty-step-name">KYC Check</div>
+                            <div class="ty-step-sub">Automated review (~15m)</div>
+                        </div>
+                        <div class="ty-step">
+                            <div class="ty-step-icon">3</div>
+                            <div class="ty-step-name">Call Verification</div>
+                            <div class="ty-step-sub">Loan desk connects</div>
+                        </div>
+                        <div class="ty-step">
+                            <div class="ty-step-icon">4</div>
+                            <div class="ty-step-name">Disbursal</div>
+                            <div class="ty-step-sub">Funds in 24 hours</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="ty-actions-row">
+                    <button type="button" class="btn-outline" onclick="window.print();">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        Print Confirmation
+                    </button>
+                    <button type="button" class="btn-primary" style="width: auto; padding: 12px 28px;" onclick="resetApplicationForm();">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                            <path d="M3 3v5h5"></path>
+                        </svg>
+                        Submit Another Application
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Borrow With XYZ Bank Feature Cards -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-header">
+                <h2>Why Apply With XYZ Bank?</h2>
+                <p>Over 1 million customers trust XYZ Bank for transparent lending, zero hidden fees, and lightning-fast digital approvals.</p>
+            </div>
+
+            <div class="card-benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon-box blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3>Instant Pre-Approval</h3>
+                    <p>Our automated decision engine evaluates your eligibility in minutes without impacting your credit score.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-box gold">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3>Competitive Rates</h3>
+                    <p>Access market-lowest interest rates with flexible repayment tenures and zero prepayment penalty.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-box green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="12" y1="18" x2="12" y2="12"></line>
+                            <line x1="9" y1="15" x2="15" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3>Zero Paperwork</h3>
+                    <p>Experience an end-to-end digital journey. Upload KYC online or get doorstep verification assistance.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-box navy">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Dedicated Manager</h3>
+                    <p>Personal loan advisors assigned to guide you every step of the way from submission to final fund disbursal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="images/bank-logo.svg" alt="XYZ Bank" style="filter: brightness(0) invert(1); height: 44px;">
+                    </div>
+                    <p class="footer-desc">XYZ Bank is a premier digital financial institution providing transparent, accessible, and fast credit solutions to empower personal and enterprise growth.</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="lang-en">Contact Support</h4>
+                    <ul>
+                        <li class="lang-en">Toll-Free: 1900 9247</li>
+                        <li class="lang-en">Email: XYZBank247@mail.com</li>
+                        <li class="lang-en">Mon - Sat: 9:00 AM - 7:00 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="lang-en">Loan Products</h4>
+                    <ul>
+                        <li><a href="#" class="lang-en" onclick="selectLoanProduct('1000056', 'Gold Loan'); return false;">Gold Loan</a></li>
+                        <li><a href="#" class="lang-en" onclick="selectLoanProduct('1000472', 'Home Loan'); return false;">Home Loan</a></li>
+                        <li><a href="#" class="lang-en">Personal Loan</a></li>
+                        <li><a href="#" class="lang-en">Business Credit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="lang-en">Security & Legal</h4>
+                    <ul>
+                        <li><a href="#" class="lang-en">Terms & Conditions</a></li>
+                        <li><a href="#" class="lang-en">Privacy Policy</a></li>
+                        <li><a href="#" class="lang-en">RBI / Banking Disclosures</a></li>
+                        <li><a href="#" class="lang-en">Security Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p><strong>Online Lead Capture & Origination Demo</strong></p>
+                <p class="lang-en">Disclaimer: This website is strictly for demonstration purposes only and does not offer live financial products. All information and logos are for illustrative purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts & Form Validation (Original Logic Preserved & Enhanced) -->
+    <script> 
+        function UpdateProductName() { 
+            var prodObj = document.getElementById('Product'); 
+            var prodNameObj = document.getElementById('ProductName'); 
+            if (prodObj && prodNameObj) {
+                prodNameObj.value = prodObj.options[prodObj.selectedIndex].text; 
+            }
+        } 
+        
+        function IsValidForm() { 
+            var errMessage = ''; 
+            var lNameEl = document.getElementById('LName');
+            if (lNameEl && lNameEl.value.trim() == '') { 
+                errMessage = 'Enter LastName.\n'; 
+            } 
+            if (!IsValidEmail()) { 
+                errMessage += 'Not a valid EmailID.\n'; 
+            } 
+            if (errMessage != '') { 
+                alert(errMessage); 
+                return false; 
+            } 
+            return true; 
+        } 
+        
+        function IsValidEmail() { 
+            var emailEl = document.getElementById('Email');
+            if (emailEl == null) return true; 
+            var inem = emailEl.value; 
+            if(inem != null && inem !='') { 
+                var filter=/^(\w+(?:\.\w+)*)@((?:\w+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i; 
+                if (!filter.test(inem)) return false; 
+            } 
+            return true; 
+        }
+
+        // Product Selector Interactive Cards
+        function selectLoanProduct(value, label, btnElement) {
+            var selectEl = document.getElementById('Product');
+            if (selectEl) {
+                selectEl.value = value;
+                UpdateProductName();
+            }
+            
+            // Toggle active card styling
+            document.querySelectorAll('.product-card-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            if (btnElement) {
+                btnElement.classList.add('active');
+            } else {
+                if (value === '1000056') {
+                    var el = document.getElementById('btn-prod-gold');
+                    if (el) el.classList.add('active');
+                } else if (value === '1000472') {
+                    var el = document.getElementById('btn-prod-home');
+                    if (el) el.classList.add('active');
+                }
+            }
+
+            // Update product perks text
+            var perksList = document.getElementById('product-perks-list');
+            if (perksList) {
+                if (value === '1000472') { // Home Loan
+                    perksList.innerHTML = `
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Attractive home loan interest rates from 8.35% p.a.</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Flexible repayment tenure up to 30 years</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Minimal processing fee & simplified title verification</span>
+                        </li>
+                    `;
+                } else { // Gold Loan
+                    perksList.innerHTML = `
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Instant cash against physical gold assets</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Up to 75% of current market bullion value</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Zero hidden charges & flexible tenure</span>
+                        </li>
+                    `;
+                }
+            }
+        }
+
+        function syncProductCard() {
+            var selectEl = document.getElementById('Product');
+            if (selectEl) {
+                var selectedVal = selectEl.value;
+                var selectedText = selectEl.options[selectEl.selectedIndex].text;
+                selectLoanProduct(selectedVal, selectedText);
+            }
+        }
+
+        // On Submit: Show Thank You Page & Submit lead without error navigation
+        function handleFormSubmit(event) {
+            // First run validation
+            if (!IsValidForm()) {
+                if (event) event.preventDefault();
+                return false;
+            }
+
+            // Harvest form values for the thank you display
+            var fName = document.getElementById('FName') ? document.getElementById('FName').value : '';
+            var lName = document.getElementById('LName') ? document.getElementById('LName').value : '';
+            var email = document.getElementById('Email') ? document.getElementById('Email').value : '';
+            var phone = document.getElementById('MobPhone') ? document.getElementById('MobPhone').value : '';
+            var company = document.getElementById('Company') ? document.getElementById('Company').value : '';
+            var prodSelect = document.getElementById('Product');
+            var productName = prodSelect ? prodSelect.options[prodSelect.selectedIndex].text : 'Gold Loan';
+
+            var fullName = (fName + ' ' + lName).trim() || 'Valued Applicant';
+            var refNumber = 'XYZ-' + new Date().getFullYear() + '-' + Math.floor(100000 + Math.random() * 900000);
+
+            // Save to sessionStorage so thankyou.html can read it if ever navigated
+            try {
+                sessionStorage.setItem('olc_name', fullName);
+                sessionStorage.setItem('olc_email', email);
+                sessionStorage.setItem('olc_phone', phone);
+                sessionStorage.setItem('olc_company', company);
+                sessionStorage.setItem('olc_product', productName);
+                sessionStorage.setItem('olc_ref', refNumber);
+            } catch(e) {}
+
+            // Populate Thank You View Elements
+            document.getElementById('ty-applicant-name').textContent = fName || fullName;
+            document.getElementById('ty-fullname').textContent = fullName;
+            document.getElementById('ty-ref-code').textContent = refNumber;
+            document.getElementById('ty-product').textContent = productName;
+            document.getElementById('ty-email').textContent = email;
+            document.getElementById('ty-phone').textContent = phone;
+            document.getElementById('ty-company').textContent = company;
+            
+            var now = new Date();
+            document.getElementById('ty-timestamp').textContent = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + ' at ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+            // Provide visual feedback on button
+            var submitBtn = document.getElementById('submitBtn');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span>Submitting Securely...</span>';
+            }
+
+            // Reveal Thank You Page after a brief smooth transition
+            setTimeout(function() {
+                var formContainer = document.getElementById('form-container');
+                var tyContainer = document.getElementById('thank-you-container');
+                if (formContainer && tyContainer) {
+                    formContainer.style.display = 'none';
+                    tyContainer.style.display = 'block';
+                    tyContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 400);
+
+            // Return true so the form posts to the hidden iframe seamlessly
+            return true;
+        }
+
+        // Reset application to allow multiple submissions
+        function resetApplicationForm() {
+            var form = document.getElementById('OnLineLeadForm');
+            if (form) form.reset();
+            
+            var submitBtn = document.getElementById('submitBtn');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `
+                    <span>Submit Application</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                `;
+            }
+
+            document.getElementById('thank-you-container').style.display = 'none';
+            var formContainer = document.getElementById('form-container');
+            formContainer.style.display = 'grid';
+            formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', function() {
+            UpdateProductName();
+        });
+    </script>
+</body>
+</html>

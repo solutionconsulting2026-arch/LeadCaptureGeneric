@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE885"/>
+      <stop offset="100%" stop-color="#F5B700"/>
+    </linearGradient>
+    <linearGradient id="goldSide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D49A00"/>
+      <stop offset="100%" stop-color="#A77200"/>
+    </linearGradient>
+    <linearGradient id="goldFront" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD000"/>
+      <stop offset="100%" stop-color="#E59B00"/>
+    </linearGradient>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#E59B00" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background Glow -->
+  <circle cx="100" cy="80" r="65" fill="#FFF7D6" opacity="0.8"/>
+  <circle cx="100" cy="80" r="50" fill="#FFEAA0" opacity="0.5"/>
+
+  <!-- Star sparkles -->
+  <path d="M 45 40 L 47 45 L 52 47 L 47 49 L 45 54 L 43 49 L 38 47 L 43 45 Z" fill="#FFA500"/>
+  <path d="M 155 45 L 157 49 L 161 51 L 157 53 L 155 57 L 153 53 L 149 51 L 153 49 Z" fill="#FFA500"/>
+  <path d="M 160 115 L 161 118 L 164 119 L 161 120 L 160 123 L 159 120 L 156 119 L 159 118 Z" fill="#FFA500"/>
+
+  <!-- Gold Bar 1 (Bottom Left) -->
+  <g transform="translate(40, 75)" filter="url(#goldGlow)">
+    <!-- Top Face -->
+    <polygon points="15,0 75,0 65,14 5,14" fill="url(#goldTop)"/>
+    <!-- Front Face -->
+    <polygon points="5,14 65,14 60,35 0,35" fill="url(#goldFront)"/>
+    <!-- Right Face -->
+    <polygon points="65,14 75,0 70,21 60,35" fill="url(#goldSide)"/>
+    <text x="35" y="27" font-family="'Inter', sans-serif" font-size="8" font-weight="800" fill="#7A4B00" text-anchor="middle" letter-spacing="1">999.9</text>
+  </g>
+
+  <!-- Gold Bar 2 (Bottom Right) -->
+  <g transform="translate(85, 75)" filter="url(#goldGlow)">
+    <!-- Top Face -->
+    <polygon points="15,0 75,0 65,14 5,14" fill="url(#goldTop)"/>
+    <!-- Front Face -->
+    <polygon points="5,14 65,14 60,35 0,35" fill="url(#goldFront)"/>
+    <!-- Right Face -->
+    <polygon points="65,14 75,0 70,21 60,35" fill="url(#goldSide)"/>
+    <text x="35" y="27" font-family="'Inter', sans-serif" font-size="8" font-weight="800" fill="#7A4B00" text-anchor="middle" letter-spacing="1">FINE GOLD</text>
+  </g>
+
+  <!-- Gold Bar 3 (Top Pyramid Center) -->
+  <g transform="translate(62, 50)" filter="url(#goldGlow)">
+    <!-- Top Face -->
+    <polygon points="15,0 75,0 65,14 5,14" fill="url(#goldTop)"/>
+    <!-- Front Face -->
+    <polygon points="5,14 65,14 60,35 0,35" fill="url(#goldFront)"/>
+    <!-- Right Face -->
+    <polygon points="65,14 75,0 70,21 60,35" fill="url(#goldSide)"/>
+    <text x="35" y="27" font-family="'Inter', sans-serif" font-size="8" font-weight="800" fill="#7A4B00" text-anchor="middle" letter-spacing="1">XYZ 1KG</text>
+  </g>
+</svg>
